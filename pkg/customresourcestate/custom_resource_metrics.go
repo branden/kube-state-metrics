@@ -60,7 +60,7 @@ func NewCustomResourceMetrics(resource Resource) (customresource.RegistryFactory
 }
 
 func (s customResourceMetrics) Name() string {
-	return s.ResourceName
+	return s.ResourceName + "." + s.GroupVersionKind.Group
 }
 
 func (s customResourceMetrics) CreateClient(cfg *rest.Config) (interface{}, error) {
